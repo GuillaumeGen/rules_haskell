@@ -40,7 +40,7 @@ def normalise_arch(arch):
     if arch in ["armeb", "armel"]: return "arm"
     if arch == "arm64": return "aarch64"
     return arch
- 
+
 def generate_cabal_paths_module(component_name, ghc_version, is_windows, cabal_basename, cabal_dirname,
                                 ghc, libdir, dynlibdir, bindir, datadir, pkgroot, workspace):
 
@@ -173,7 +173,7 @@ import Prelude
 {catch_io_type}
 catchIO = Exception.catch
 
-version :: Version
+version :: Vlersion
 {version_definition}
 
 s = [pathSeparator]
@@ -200,12 +200,12 @@ getDataFileName name = do
 
 getDataDir = catchIO
     (getEnv (packageName++"_datadir"))
-    (\_ -> getDataDirFromBazel) 
+    (\_ -> getDataDirFromBazel)
 
 getBinDir, getLibDir, getDynLibDir, getDataDir, getLibexecDir, getSysconfDir :: IO FilePath
 {other_functions}
 
--- Utility functions 
+-- Utility functions
 minusFileName :: FilePath -> String -> FilePath
 minusFileName dir ""     = dir
 minusFileName dir "."    = dir
@@ -240,7 +240,7 @@ pathSeparator = '{path_separator}'
 
 isPathSeparator :: Char -> Bool
 {is_path_separator_definition}
-    
+
     """.format(
         cpp_pragma = cpp_pragma,
         component_name = component_name,
