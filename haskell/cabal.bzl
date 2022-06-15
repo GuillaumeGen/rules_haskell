@@ -711,7 +711,7 @@ haskell_cabal_library = rule(
             and the `runfiles` package should be added to the component's `build-depends` section of the `.cabal` file.
             WARNING: this is not supported in profiling mode yet.
             """,
-            default = False,
+            default = True,
         ),
         "flags": attr.string_list(
             doc = "List of Cabal flags, will be passed to `Setup.hs configure --flags=...`.",
@@ -950,7 +950,7 @@ haskell_cabal_binary = rule(
             and the `runfiles` package should be added to the component's `build-depends` section of the `.cabal` file.
             WARNING: this is not supported in profiling mode yet.
             """,
-            default = False,
+            default = True,
         ),
         "flags": attr.string_list(
             doc = "List of Cabal flags, will be passed to `Setup.hs configure --flags=...`.",
